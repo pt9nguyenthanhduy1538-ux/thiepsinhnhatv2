@@ -1,0 +1,97 @@
+/* BODY + MATRIX */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: monospace;
+    color: white;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* ---------------- BINARY BAR LOADING ---------------- */
+#binary-loading-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffc8ff;
+}
+
+.binary-bar {
+    display: flex;
+    gap: 2px;
+    margin: 20px auto;
+    width: 300px;
+    height: 30px;
+    background: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.binary-cell {
+    flex: 1;
+    height: 100%;
+    background: #555;
+    color: #00ff88;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    font-family: monospace;
+    animation: blink 0.3s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+.loading-text {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* ---------------- READY BOX ---------------- */
+#ready-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ready-box {
+    background: linear-gradient(135deg,#824bff,#b77cff,#e3b3ff);
+    padding: 12px 25px;  /* nhỏ gọn */
+    border-radius: 12px;
+    color: white;
+    font-size: 28px;     
+    box-shadow: 0 0 15px #b77cff;
+    cursor: pointer;
+    border: 2px solid #ffffff60;
+    text-align: center;
+
+    /* hiệu ứng fade in + nhấp nháy nhẹ */
+    animation: fadeIn 1s ease forwards, pulse 1.2s infinite alternate;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+    from { opacity: 0.9; }
+    to { opacity: 1; }
+}
+
+.ready-box:hover {
+    box-shadow: 0 0 25px #d7aaff;
+    transform: scale(1.05);
+}
