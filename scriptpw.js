@@ -19,6 +19,3 @@ function checkPass() {
         alert("Sai rồi bé yêu ơi 😳💗");
     }
 }
-
-
-
