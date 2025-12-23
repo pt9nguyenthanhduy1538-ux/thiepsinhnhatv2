@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top, #87ceeb 0%, #cce7ff 60%, #ffffff 100%); /* trời xanh + mây */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: #deb887;
+    z-index: 1;
+}
+
+.cloud1 { position: absolute; top: 20px; left: 10%; font-size: 50px; }
+.cloud2 { position: absolute; top: 50px; right: 15%; font-size: 60px; }
+
+.flower {
+    position: absolute;
+    bottom: 150px;
+    left: 50px; 
+    font-size: 60px;
+}
+
+.bee {
+    position: absolute;
+    bottom: 160px;
+    right: 50px; 
+    font-size: 50px;
+}
+
+.enter-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enterBtn {
+    padding: 15px 30px;
+    font-size: 24px;
+    border: none;
+    border-radius: 12px;
+    background: #ff00ff;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff69b4;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff69b4; }
+    50% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff69b4; }
+    100% { text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff69b4; }
+}
+.cloud1 {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    font-size: 100px; 
+}
+
+.cloud2 {
+    position: absolute;
+    top: 50px;
+    right: 15%;
+    font-size: 160px; 
+}
