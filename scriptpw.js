@@ -14,10 +14,11 @@ function deleteNum() {
 
 function checkPass() {
     if (input === "25122010") {
-        window.location.href = "newpagemain.html"; 
+        window.location.href = "loading.html"; 
     } else {
         alert("Sai rồi bé yêu ơi 😳💗");
     }
 }
+
 
 
