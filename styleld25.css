@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* ---------------- MATRIX 0-9 RƠI ---------------- */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* ---------------- LOADING ---------------- */
+#loading-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #ffffff40;
+    border-top-color: #ff6bff;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #ffc8ff;
+}
+
+/* ---------------- SẴN SÀNG ---------------- */
+
+#ready-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ready-box {
+    background: linear-gradient(135deg,#824bff,#b77cff,#e3b3ff);
+    padding: 20px 35px;
+    border-radius: 15px;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 0 25px #b77cff;
+    cursor: pointer;
+    border: 2px solid #ffffff60;
+    animation: fadeIn 1s ease forwards;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ready-box:hover {
+    box-shadow: 0 0 35px #d7aaff;
+    transform: scale(1.05);
+}
