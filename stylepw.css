@@ -1,0 +1,277 @@
+body {
+    background: linear-gradient(135deg, #ffc7df, #ffdff3);
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.box {
+    width: 260px;
+    background: #ffffffcc;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 25px rgba(255, 130, 170, 0.5);
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.display {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid #ff8ac8;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    background: #ffe6f2;
+    pointer-events: none;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 12px 0;
+    border: none;
+    border-radius: 15px;
+    background: #ffa4d5;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+button:hover {
+    background: #ff7fca;
+    transform: scale(1.07);
+}
+
+#ok {
+    background: #69e06f;
+}
+#ok:hover {
+    background: #4ec85a;
+}
+
+#del {
+    background: #ff6363;
+}
+#del:hover {
+    background: #ff3f3f;
+}
+.rainbow-text {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ff4fa3; 
+    text-shadow: 0 0 8px rgba(255, 140, 200, 0.4); 
+}
+button {
+    padding: 12px 0;
+    border: none;
+    border-radius: 15px;
+    background: #ffa4d5;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.15s;
+
+    background-image: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff7b00,
+        #ffee00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #8c00ff,
+        #ff00c8,
+        #ff0000
+    );
+    background-size: 500%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbowBtn 4s linear infinite;
+}
+
+@keyframes rainbowBtn {
+    0% { background-position: 0%; }
+    100% { background-position: 500%; }
+}
+@keyframes rainbowSlow {
+    0% { background-position: 0%; }
+    100% { background-position: 500%; }
+}
+
+.keys button:nth-child(1) {
+    animation: rainbowSlow 7s linear infinite;
+}
+
+.keys button:nth-child(2) {
+    animation: rainbowSlow 8s linear infinite;
+}
+
+.keys button:nth-child(3) {
+    animation: rainbowSlow 6s linear infinite;
+}
+
+.keys button:nth-child(4) {
+    animation: rainbowSlow 9s linear infinite;
+}
+
+.keys button:nth-child(5) {
+    animation: rainbowSlow 7.5s linear infinite;
+}
+
+.keys button:nth-child(6) {
+    animation: rainbowSlow 8.5s linear infinite;
+}
+
+.keys button:nth-child(7) {
+    animation: rainbowSlow 10s linear infinite;
+}
+
+.keys button:nth-child(8) {
+    animation: rainbowSlow 9.5s linear infinite;
+}
+
+.keys button:nth-child(9) {
+    animation: rainbowSlow 7.8s linear infinite;
+}
+
+.keys button:nth-child(10) {
+    animation: rainbowSlow 11s linear infinite;
+}
+
+.keys button:nth-child(11) {
+    animation: rainbowSlow 8.2s linear infinite;
+}
+
+.keys button:nth-child(12) {
+    animation: rainbowSlow 10.8s linear infinite;
+}
+.sticker {
+  position: fixed;
+  font-size: 55px;      
+  pointer-events: none;
+  opacity: 0.98;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.15));
+  animation: stickerWiggle 4s ease-in-out infinite;
+}
+
+.sticker-left {
+  left: 22px;
+  top: 22px;
+}
+
+.sticker-right {
+  right: 22px;
+  top: 22px;
+}
+
+@keyframes stickerWiggle {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-7px) rotate(-4deg) scale(1.03); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+.box {
+  position: relative; 
+  transition: box-shadow 0.25s ease;
+  box-shadow: 0 8px 30px rgba(255, 120, 180, 0.35), inset 0 0 20px rgba(255, 200, 230, 0.12);
+}
+
+.box:focus-within {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08), inset 0 0 8px rgba(255,200,230,0.06);
+}
+
+.heart {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px; 
+  font-size: 18px;
+  pointer-events: none;
+  opacity: 0.95;
+  -webkit-backface-visibility: hidden;
+}
+
+.heart.h1 { left: 25%; font-size: 20px; animation: heartFloat 5.5s ease-in-out infinite; animation-delay: 0s; }
+.heart.h2 { left: 75%; font-size: 16px; animation: heartFloat 6.5s ease-in-out infinite; animation-delay: 1.2s; }
+
+@keyframes heartFloat {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 0.95;
+  }
+  40% {
+    transform: translateX(-50%) translateY(-60px) scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-140px) scale(0.98);
+    opacity: 0;
+  }
+}
+
+.sticker {
+  position: fixed;
+  font-size: 70px;
+  pointer-events: none;
+  opacity: 0.95;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12));
+}
+
+.sticker-left {
+  left: 20px;
+  top: 20px;
+}
+.sticker-right {
+  right: 20px;
+  top: 20px;
+}
+
+.sticker {
+  animation: stickerWiggle 4.5s ease-in-out infinite;
+}
+@keyframes stickerWiggle {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(-6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.sticker-gift {
+  position: fixed;
+  bottom: 20px;
+  left: 25px;
+  font-size: 70px;       
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.15));
+  animation: stickerWiggle 4s ease-in-out infinite;
+}
+
+.sticker-star {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  font-size: 70px;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.15));
+  animation: stickerWiggle 4s ease-in-out infinite;
+}
+
+@keyframes stickerWiggle {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-7px) rotate(-4deg) scale(1.03); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}

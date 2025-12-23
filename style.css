@@ -1,0 +1,70 @@
+body {
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(45deg, #FFC1CC, #B8E0D2, #FFF3B0);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#box1 {
+width: 300px;
+height: 300px;
+border-style: solid;
+bacKground: #FFF3B0;
+margin: 100px;
+padding: 40px;
+font-weight: 600;
+font-size: 30px;
+text-align: center;
+color: #B3446C;
+justify-content: center;
+align-items: center;
+border: none;
+border-radius: 50px;
+display: flex;
+text-shadow: 
+2px 2px 0 #ff6b6b,
+-2px -2px 0 #4ECDC4,
+2px -2px 0 #FFD93D,
+-2px 2px 0 #6a0572;
+animation: glow 2s infinite alternate/* Animation đổi màu / bóng */
+@keyframes glow {
+    0% {
+        text-shadow:
+            2px 2px 0 #FF6B6B,
+            -2px -2px 0 #4ECDC4,
+            2px -2px 0 #FFD93D,
+            -2px 2px 0 #6A0572;
+    }
+    50% {
+        text-shadow:
+            3px 3px 5px #FF6B6B,
+            -3px -3px 5px #4ECDC4,
+            3px -3px 5px #FFD93D,
+            -3px 3px 5px #6A0572;
+    }
+    100% {
+        text-shadow:
+            2px 2px 0 #FFD93D,
+            -2px -2px 0 #6A0572,
+            2px -2px 0 #FF6B6B,
+            -2px 2px 0 #4ECDC4;
+    }
+};
+button{
+    background-color: #ff6b6b;
+    display: flex;
+    border: none;
+    border-radius: 50px;
+    width: 120px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 30;
+    font-size: 30px;
+}
+}
+a{
+    text-decoration: none;
+    outline: none;
+}

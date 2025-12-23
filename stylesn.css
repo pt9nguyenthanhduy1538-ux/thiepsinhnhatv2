@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #cce7ff, #ffe6e6, #d6f5d6);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.icons span {
+    font-size: 24px;
+    margin: 5px;
+}
+
+.heart {
+    position: absolute;
+    opacity: 0.9;
+    animation: floatFree 6s linear infinite;
+}
+.h1 { left: 10%; bottom: 10px; font-size: 18px; animation-duration: 5s; }
+.h2 { left: 20%; bottom: 5px; font-size: 22px; animation-duration: 6s; animation-delay: 0.5s; }
+.h3 { left: 30%; bottom: 15px; font-size: 16px; animation-duration: 4.5s; animation-delay: 1s; }
+.h4 { left: 40%; bottom: 0px; font-size: 20px; animation-duration: 5.5s; animation-delay: 1.5s; }
+
+@keyframes floatFree {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.9; }
+    50% { transform: translateY(-100px) rotate(15deg) scale(1.2); opacity: 1; }
+    100% { transform: translateY(-220px) rotate(-10deg) scale(1); opacity: 0; }
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+.confetti {
+    position: absolute;
+    border-radius: 2px;
+    opacity: 0.9;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(300px) rotate(360deg); opacity: 0; }
+}
+
+.balloons-container {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    pointer-events: none;
+    z-index: 998;
+}
+.balloon {
+    position: absolute;
+    font-size: 32px;
+    animation: balloonRise 5s linear infinite;
+}
+.b1 { left: 10%; animation-delay: 0s; }
+.b2 { left: 30%; animation-delay: 0.5s; }
+.b3 { left: 50%; animation-delay: 1s; }
+.b4 { left: 70%; animation-delay: 1.5s; }
+.b5 { left: 90%; animation-delay: 2s; }
+
+@keyframes balloonRise {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-150px) scale(1.1); }
+    100% { transform: translateY(-300px) scale(1); }
+}
+.back-btn {
+    position: fixed;       
+    top: 20px;
+    left: 20px;           
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffb6c1;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
