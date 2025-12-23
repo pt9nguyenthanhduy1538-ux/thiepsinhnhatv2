@@ -1,0 +1,113 @@
+/* 🌌 Background Galaxy */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at center,
+                #120f2a 0%,
+                #0b0820 40%,
+                #050414 100%);
+    font-family: "Poppins", sans-serif;
+    position: relative;
+}
+
+/* ⭐ Sao nhỏ */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px, 2px 2px;
+    background-position: 0 0, 60px 90px;
+    opacity: 0.35;
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.45; }
+}
+
+.loading-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ⭐ Loading Box */
+.loading-box {
+    width: 330px;
+    height: 28px;
+    border-radius: 20px;
+    border: 2px solid #9d6bff;
+    padding: 3px;
+    background: rgba(255,255,255,0.05);
+    position: relative;
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #9f73ff, #6fb7ff);
+    box-shadow: 0 0 10px #9f73ff;
+    transition: 0.1s linear;
+}
+
+.loading-text {
+    margin-top: 12px;
+    text-align: center;
+    color: #cfc9ff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #9f73ff;
+}
+
+/* ⭐ Khung xuất hiện sau loading */
+.ready-box {
+    margin-top: 35px;
+    width: 260px;
+    padding: 22px;
+    border-radius: 18px;
+
+    border: 2px solid #a974ff;
+    box-shadow: 
+        0 0 12px #a974ff,
+        0 0 22px #854fff;
+
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+
+    display: none;
+    justify-content: center;
+}
+
+/* ⭐ Button bên trong */
+#readyBtn {
+    padding: 12px 28px;
+    border-radius: 12px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #b98aff, #7ab2ff);
+    color: white;
+
+    box-shadow: 
+        0 0 10px #b98aff,
+        0 0 18px #7ab2ff;
+
+    transition: 0.25s;
+}
+
+#readyBtn:hover {
+    transform: scale(1.12);
+    box-shadow: 
+        0 0 18px #d6b9ff,
+        0 0 26px #8bcaff;
+}
