@@ -5,18 +5,16 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-const total = 1250; // TĂNG SỐ HẠT CỰC NHIỀU
+const total = 1000; 
 let time = 0;
 let forming = false;
 
-// Hàm hình trái tim
 function heartFunction(t) {
     const x = 16 * Math.pow(Math.sin(t), 3);
     const y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
     return { x, y };
 }
 
-// Tạo điểm trái tim
 let heartPoints = [];
 for (let i = 0; i < total; i++) {
     const t = Math.random() * Math.PI * 2;
@@ -28,7 +26,6 @@ for (let i = 0; i < total; i++) {
     });
 }
 
-// Class hạt
 class Particle {
     constructor() {
         this.resetRandom();
@@ -46,22 +43,18 @@ class Particle {
 
     update(index) {
         if (!forming) {
-            // BAY LOẠN THIÊN HÀ
             this.x += this.vx;
             this.y += this.vy;
 
-            // hiệu ứng xoáy galaxy
             this.angle += 0.01;
             this.vx = Math.cos(this.angle) * this.speed;
             this.vy = Math.sin(this.angle) * this.speed;
         } else {
-            // TỤ LẠI + XOAY TRÁI TIM
             let target = heartPoints[index];
             const cx = canvas.width / 2;
             const cy = canvas.height / 2;
 
-            // góc xoay trái tim
-            const rotate = time * 0.8; // tốc độ xoay NÂNG CẤP
+            const rotate = time * 0.8;
 
             const tx =
                 cx +
@@ -73,7 +66,6 @@ class Particle {
                 target.x * Math.sin(rotate) +
                 target.y * Math.cos(rotate);
 
-            // tốc độ tụ lại
             this.x += (tx - this.x) * 0.018;
             this.y += (ty - this.y) * 0.018;
         }
@@ -89,12 +81,10 @@ class Particle {
     }
 }
 
-// Tạo hạt
 for (let i = 0; i < total; i++) {
     particles.push(new Particle());
 }
 
-// Render
 function animate() {
     ctx.fillStyle = "rgba(5, 5, 20, 0.22)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -106,7 +96,6 @@ function animate() {
         p.draw();
     });
 
-    // HALO + GLOW + NHỊP ĐẬP
     if (forming) {
         const pulse = 1 + Math.sin(time * 5) * 0.08;
 
@@ -129,7 +118,6 @@ function animate() {
 
 animate();
 
-// Sau 8 giây bay loạn → tụ lại
 setTimeout(() => {
     forming = true;
 }, 8000);
