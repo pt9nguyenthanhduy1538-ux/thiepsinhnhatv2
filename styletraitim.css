@@ -5,16 +5,13 @@ body {
   font-family: sans-serif;
 }
 
-/* Canvas nền */
 canvas {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
 }
 
-/* Chữ neon */
 .neon-text {
   position: fixed;
   top: 50%;
@@ -22,15 +19,55 @@ canvas {
   transform: translate(-50%, -50%);
   font-size: 48px;
   color: #ff75ff;
-  text-shadow:
-    0 0 10px #ff24ff,
-    0 0 30px #ff24ff,
-    0 0 60px #ff24ff;
+  text-shadow: 0 0 10px #ff24ff, 0 0 30px #ff24ff, 0 0 60px #ff24ff;
   pointer-events: none;
-  z-index: 10;
 }
 
-/* Nút trở lại */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(130,150,255,0.25);
+  color: white;
+  border: 1px solid rgba(180,200,255,0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.neon-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #ff75ff;
+  text-shadow: 0 0 10px #ff24ff, 0 0 30px #ff24ff, 0 0 60px #ff24ff;
+  pointer-events: none;
+  z-index: 10;    /* ⭐ THÊM DÒNG NÀY */
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(130,150,255,0.25);
+  color: white;
+  border: 1px solid rgba(180,200,255,0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  z-index: 10;    /* ⭐ THÊM DÒNG NÀY LUÔN */
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;     /* ⭐ canvas để dưới */
+}
 .back-btn {
   position: fixed;
   top: 20px;
@@ -52,12 +89,13 @@ canvas {
     inset 0 0 10px rgba(255, 180, 230, 0.25);
 
   cursor: pointer;
-  z-index: 20;
+  z-index: 999; /* đảm bảo nổi trên canvas */
+
   transition: all 0.3s ease;
 }
 
 .back-btn:hover {
-  transform: translateY(-1px) scale(1.05);
+  transform: scale(1.05);
   background: rgba(255, 140, 210, 0.3);
   box-shadow:
     0 0 25px rgba(255, 120, 200, 0.7),
