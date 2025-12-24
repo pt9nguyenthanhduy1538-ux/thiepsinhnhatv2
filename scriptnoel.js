@@ -13,5 +13,6 @@ function createSnow() {
 
 setInterval(createSnow, 200);
 function goBack() {
-    window.location.href = 'newpage.html';
+    window.location.href = 'newpagenoel.html';
+
 }
