@@ -13,9 +13,10 @@ function createConfetti() {
 
 setInterval(()=>{ if(Math.random()<0.5) createConfetti(); },200);
 function goBack() {
-    window.location.href = './newpagemain.html';
+    window.location.href = 'newpagemain.html';
 }
 function goNext() {
     window.location.href = "newpageldsnmodel.html"; // đổi tên trang tùy bé
 }
+
 
