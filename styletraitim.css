@@ -5,79 +5,61 @@ body {
   font-family: sans-serif;
 }
 
-canvas {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.neon-text {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 48px;
-  color: #ff75ff;
-  text-shadow: 0 0 10px #ff24ff, 0 0 30px #ff24ff, 0 0 60px #ff24ff;
-  pointer-events: none;
-}
-
-.back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background: rgba(130,150,255,0.25);
-  color: white;
-  border: 1px solid rgba(180,200,255,0.4);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-}
-.neon-text {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 48px;
-  color: #ff75ff;
-  text-shadow: 0 0 10px #ff24ff, 0 0 30px #ff24ff, 0 0 60px #ff24ff;
-  pointer-events: none;
-  z-index: 10;    /* ⭐ THÊM DÒNG NÀY */
-}
-
-body {
-  margin: 0;
-  overflow: hidden;
-  background: #000;
-  font-family: sans-serif;
-}
-
-/* Nút trở về */
-.back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background: rgba(130,150,255,0.25);
-  color: white;
-  border: 1px solid rgba(180,200,255,0.4);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-  z-index: 10;
-}
-
-.back-btn:hover {
-  background: rgba(130,150,255,0.4);
-}
-
-/* Canvas nằm dưới */
+/* Canvas nền */
 canvas {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+/* Chữ neon */
+.neon-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #ff75ff;
+  text-shadow:
+    0 0 10px #ff24ff,
+    0 0 30px #ff24ff,
+    0 0 60px #ff24ff;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Nút trở lại */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: rgba(255, 120, 200, 0.18);
+  border: 1px solid rgba(255, 160, 220, 0.45);
+  color: #ffd6f2;
+
+  font-size: 14px;
+  letter-spacing: 0.5px;
+
+  backdrop-filter: blur(6px);
+  box-shadow:
+    0 0 15px rgba(255, 120, 200, 0.35),
+    inset 0 0 10px rgba(255, 180, 230, 0.25);
+
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-1px) scale(1.05);
+  background: rgba(255, 140, 210, 0.3);
+  box-shadow:
+    0 0 25px rgba(255, 120, 200, 0.7),
+    inset 0 0 14px rgba(255, 200, 240, 0.35);
 }
