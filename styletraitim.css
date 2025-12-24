@@ -47,6 +47,14 @@ canvas {
   z-index: 10;    /* ⭐ THÊM DÒNG NÀY */
 }
 
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+  font-family: sans-serif;
+}
+
+/* Nút trở về */
 .back-btn {
   position: fixed;
   top: 20px;
@@ -58,13 +66,18 @@ canvas {
   border-radius: 12px;
   backdrop-filter: blur(4px);
   cursor: pointer;
-  z-index: 10;    /* ⭐ THÊM DÒNG NÀY LUÔN */
+  z-index: 10;
 }
 
+.back-btn:hover {
+  background: rgba(130,150,255,0.4);
+}
+
+/* Canvas nằm dưới */
 canvas {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;     /* ⭐ canvas để dưới */
+  z-index: 1;
 }
