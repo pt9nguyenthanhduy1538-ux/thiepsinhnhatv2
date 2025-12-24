@@ -121,6 +121,3 @@ animate();
 setTimeout(() => {
     forming = true;
 }, 8000);
-document.getElementById("backBtn").addEventListener("click", () => {
-  window.location.href = "newpagemain.html";
-});
