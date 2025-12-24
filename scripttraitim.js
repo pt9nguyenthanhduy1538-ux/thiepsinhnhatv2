@@ -121,6 +121,40 @@ animate();
 setTimeout(() => {
     forming = true;
 }, 8000);
-  document.getElementById("backBtn").addEventListener("click", function () {
-    window.location.href = "newpagemain.html";
-  });
+// Click nút → chuyển trang
+document.getElementById("backBtn").addEventListener("click", () => {
+  window.location.href = "newpagemain.html";
+});
+
+// Canvas demo nền
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+function draw() {
+  ctx.fillStyle = "rgba(0,0,0,0.2)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "rgba(100,150,255,0.8)";
+  ctx.beginPath();
+  ctx.arc(
+    Math.random() * canvas.width,
+    Math.random() * canvas.height,
+    2,
+    0,
+    Math.PI * 2
+  );
+  ctx.fill();
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+
