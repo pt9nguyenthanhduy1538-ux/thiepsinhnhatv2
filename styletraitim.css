@@ -1,47 +1,70 @@
 body {
   margin: 0;
   overflow: hidden;
-  background: radial-gradient(circle at center, #0a0f29, #000014 80%);
+  background: radial-gradient(circle at center, #0b0f2e, #000218 80%);
   font-family: sans-serif;
 }
 
-/* Nút trở về */
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 18px;
-  background: rgba(120, 150, 255, 0.35);
-  color: #fff;
-  border: 1px solid rgba(180, 200, 255, 0.5);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-}
-.back-btn:hover {
-  background: rgba(150, 180, 255, 0.55);
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-/* Chữ neon */
 .neon-text {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 55px;
-  color: #ff6bff;
-  text-shadow:
-      0 0 10px #ff00ff,
-      0 0 20px #ff00ff,
-      0 0 40px #ff00ff,
-      0 0 60px #ff00ff;
+  font-size: 48px;
+  color: #ff75ff;
+  text-shadow: 0 0 10px #ff24ff, 0 0 30px #ff24ff, 0 0 60px #ff24ff;
   pointer-events: none;
 }
 
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(130,150,255,0.25);
+  color: white;
+  border: 1px solid rgba(180,200,255,0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.neon-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #ff75ff;
+  text-shadow: 0 0 10px #ff24ff, 0 0 30px #ff24ff, 0 0 60px #ff24ff;
+  pointer-events: none;
+  z-index: 10;    /* ⭐ THÊM DÒNG NÀY */
+}
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(130,150,255,0.25);
+  color: white;
+  border: 1px solid rgba(180,200,255,0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  z-index: 10;    /* ⭐ THÊM DÒNG NÀY LUÔN */
+}
+
 canvas {
-  width: 100vw;
-  height: 100vh;
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;     /* ⭐ canvas để dưới */
 }
